@@ -45,6 +45,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
 router.get('/verification',
     requireAuth,
     async (req: Request, res: Response) => {
+      console.log(`Authenticated : ${requireAuth}`)
       return res.status(200).send({auth: true, message: 'Authenticated.'});
     });
 
@@ -72,6 +73,7 @@ router.post('/login', async (req: Request, res: Response) => {
   }
 
   const jwt = generateJWT(user);
+  console.log(`Login : ${jwt} ${user.short()}`)
   res.status(200).send({auth: true, token: jwt, user: user.short()});
 });
 
@@ -104,6 +106,7 @@ router.post('/', async (req: Request, res: Response) => {
 
 
   const jwt = generateJWT(savedUser);
+  console.log(`Signup : ${jwt} ${savedUser.short()}`)
   res.status(201).send({token: jwt, user: savedUser.short()});
 });
 

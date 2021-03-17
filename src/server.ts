@@ -30,7 +30,10 @@ import {config} from './config/config';
 
   app.use('/v0', UserRouter);
 
-  app.get( "/", async ( req, res ) => { res.send("V0 User Api") });
+  app.get( "/", async ( req, res ) => { 
+    console.log( `V0 User Api` );
+    res.send("V0 User Api") 
+  });
 
   app.get("/health", (req : Request, res : Response) => { res.status(200).send("Hello! User Api") });
 
