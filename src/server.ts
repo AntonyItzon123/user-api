@@ -31,11 +31,11 @@ import {config} from './config/config';
   app.use('/v0', UserRouter);
 
   app.get( "/", async ( req, res ) => { 
-    console.log( `V0 User Api` );
-    res.send("V0 User Api") 
+    console.log( `V0 Feed Api` );
+    res.send("V0 Feed Api") 
   });
 
-  app.get("/health", (req : Request, res : Response) => { res.status(200).send("Hello! User Api") });
+  app.get("/health", (req : Request, res : Response) => { res.status(200).send("Hello! Feed Api") });
 
   // Start the Server
   app.listen( port, () => {
