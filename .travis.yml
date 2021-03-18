@@ -15,9 +15,9 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t feed-api-app .
-  - docker tag feed-api-app antonychinval/feed-api:latest
+  - docker build -t user-api-app .
+  - docker tag user-api-app antonychinval/user-api:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push antonychinval/feed-api
+  - docker push antonychinval/user-api
