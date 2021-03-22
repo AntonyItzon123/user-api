@@ -28,12 +28,7 @@ import {config} from './config/config';
     origin: config.url,
   }));
 
-  app.use('/v0', UserRouter);
-
-  app.get( "/", async ( req, res ) => { 
-    console.log( `V0 Feed Api` );
-    res.send("V0 Feed Api") 
-  });
+  app.use('/user', UserRouter);
 
   app.get("/health", (req : Request, res : Response) => { res.status(200).send("Hello! Feed Api") });
 
