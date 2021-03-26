@@ -25,7 +25,7 @@ import {config} from './config/config';
       'X-Access-Token', 'Authorization',
     ],
     methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-    origin: process.env.AWS_URL || "*",
+    origin: "*",
   }));
 
   app.use('/user', UserRouter);
